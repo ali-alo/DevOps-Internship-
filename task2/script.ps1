@@ -1,0 +1,1 @@
+Get-Process | Sort-Object ID | Out-File -FilePath .\sorted_process_list.txt
