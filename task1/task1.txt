@@ -1,0 +1,22 @@
+The troubleshooting steps I am giving in this file follow the methodology of a non-profit organization CompTIA.
+
+Step 1.  Identify the issue
+	The first stage identifies the differences between the expected output and the real output. In our case with SSH access, the server is supposed to respond with a welcome message or access to it, but we are not getting to that point because of the SSH access denial. The key point here is to make sure that we have an issue. In our case, from the CLI we are receiving an error message that the access to the server cannot be granted and this is an issue.
+
+Step 2.  Research the problem
+	Now when we know that we have an issue, it is time to get as much relevant information as possible. What could cause the issue and when did it happen? Have we changed the router recently? Or maybe we have updated the OS version to the latest and after that, this issue occurred. The main goal of this stage is to brainstorm all possible causes of the problem.
+
+Step 3.  Establish a theory and hypotheses of possible cause
+	When we know different factors of the problem; we can write a list of all possible causes starting with the most common and finishing with the rarest ones. In the case of our SSH access problem, the most common problem might be that the server doesn’t know our SSH public key and the most abnormal might be that firewall prevents us from connecting to the server.
+
+Step 4.  Test the theory
+	The most time-consuming part is the theory-testing part. At this stage, starting from the most common we are going through every possible cause of our issue and testing its’ relevance. We must go through every hypothesis to identify a real issue, otherwise, we are risking getting frustrated fixing parts that don’t have to do anything with our problem. In addition, sometimes it happens that more than one hypothesis causes a problem.
+
+Step 5. Come up with a plan of action and implement it
+	After good research of identifying and finding an issue, we need to establish a plan and implement it. While issues like ‘the server doesn't know our public key’ can be fixed simply by generating a new key [ssh-keygen] (depending on a server scale, solutions for this may differ), other big issues may require several DevOps engineers and a well-structured plan of execution.
+
+Step 6.  Verify system functionality 
+	In the first stage, we established a difference between the expected result and the output, now when we have implemented the plan (solution) it is time to verify that the expected result matches the current output. It is vital to check that the solution did not invoke other issues or regressions in the system. In our case, if everything went well, we should be able to get access to the server via SSH protocol. We should check that other protocols and servers (if we had them) also work as they were working, in other words, we did not cause new issues by solving this problem.
+
+Step 7. Document findings, actions and outcomes.
+	If we have reached this final stage, this means that we have successfully fixed the issue we had. It is considered good practice to document everything we did: findings, actions, and outcomes we have encountered during this journey. The original bad behavior, the expected behavior, and a final behavior (after solving the issue) are also added to the document. By doing this, we are not afraid of seeing this issue again, and we can help one of our colleagues later if they encounter the same problem.
